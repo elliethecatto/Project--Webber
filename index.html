@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Noelle's Perfect Aero World
+    </title>
+    <link rel="stylesheet" href="https://unpkg.com/7.css"> <!--Special Thanks to 7.css for the Aero CSS framework-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loading.css">
+    <link rel="icon" href="img/vista_bench.ico">
+</head>
+
+<!-- Main Code for the Website -->
+
+<body>
+    <!-- loading screen (ai-assisted with ChatGPT Codex)-->
+    <div class="win7-loader" aria-label="Loading website">
+  <picture class="win7-loader__background" aria-hidden="true">
+    <source media="(max-aspect-ratio: 3/4)"
+            srcset="assets/background-portrait.jpg">
+    <source media="(max-aspect-ratio: 7/5)"
+            srcset="assets/background-standard.jpg">
+    <source media="(min-aspect-ratio: 17/10)"
+            srcset="assets/background-widescreen.jpg">
+    <img src="assets/background-wide.jpg" alt="">
+  </picture>
+
+  <div class="win7-loader__welcome" role="status">
+    <span class="win7-loader__spinner" aria-hidden="true"></span>
+    <span>Welcome</span>
+  </div>
+
+  <div class="win7-loader__brand">
+    <img class="win7-loader__logo"
+         src="assets/vista-bench.png"
+         alt="" width="36" height="36">
+    <span>Noelle's Perfect Aero World</span>
+  </div>
+</div>
+
+    <!-- main contents of the website -->
+    <div class="window glass active mwWindow">
+        <div class="title-bar">
+            <div class="title-bar-text">portfolio_noelle.exe</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body has-space">
+    <form method="get">
+        <section class="tabs">
+            <menu role="tablist" aria-label="Webber">
+                <button type="submit" role="tab" formaction="#tab-home" aria-controls="tab-home">Home</button>
+                <button type="submit" role="tab" formaction="#tab-socials" aria-controls="tab-socials">Socials</button>
+            </menu>
+
+            <article role="tabpanel" id="tab-home">
+                <div class="flex-container">
+                    <img src="img/104.jpg" alt="My Face!!!" width="250" height="250">
+                    <div class="inline-container">
+                        <h1>Hello my name is:</h1>
+                        <h1>Justin Benedict "Noelle" L. Patulot</h1>
+                        <br>
+                        <p>I am an aspiring Web Developer bla bla bla wala pa ako maisip dito HAHAHAHHAHA tangina naman</p>
+                    </div>
+                </div>
+            </article>
+
+            <article role="tabpanel" id="tab-socials">
+                <div class="flex-container">
+                    Test....
+                </div>
+            </article>
+        </section>
+    </form>
+</div>
+    </div>
+</body>
+</html>

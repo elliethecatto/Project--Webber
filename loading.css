@@ -1,0 +1,109 @@
+/* Fully made by ChatGPT Codex (i cant replicate this myself if i dont use chatgpt at all since its too complicated for me) */
+
+/* Drop-in Windows 7 welcome screen. Everything is scoped to .win7-loader. */
+@font-face {
+  font-family: "Selawik";
+  src: url("assets/selawik.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.win7-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+  background: #0768b4;
+  font-family: "Segoe UI", "Selawik", Tahoma, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+.win7-loader__background,
+.win7-loader__background img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Windows selected a background for the display's aspect ratio, then filled it. */
+.win7-loader__background img { display: block; object-fit: fill; }
+
+.win7-loader__welcome {
+  position: absolute;
+  top: calc(50% - 48px);
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: 24px;
+  line-height: 36px;
+  text-shadow: 0 2px 3px rgb(0 38 75 / 65%);
+}
+
+/* 18 original 20 × 20 frames. CSS steps advances one frame at a time. */
+.win7-loader__spinner {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  background: url("assets/busy.png") 0 0 / 360px 20px no-repeat;
+  animation: win7-busy 900ms steps(18, end) infinite;
+}
+
+@keyframes win7-busy {
+  to { background-position: -360px 0; }
+}
+
+.win7-loader__brand {
+  position: absolute;
+  bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: max-content;
+  max-width: calc(100% - 28px);
+  min-height: 40px;
+  transform: translateX(-50%);
+  font-size: clamp(18px, 3.9vw, 28px);
+  line-height: 1.2;
+  letter-spacing: -.65px;
+  white-space: nowrap;
+  text-shadow: 0 2px 3px rgb(0 38 75 / 65%);
+}
+
+.win7-loader__logo {
+  display: block;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+@media (max-width: 420px) {
+  .win7-loader__brand { gap: 7px; letter-spacing: -.35px; }
+  .win7-loader__logo { width: 30px; height: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .win7-loader__spinner { animation: none; }
+}
+
+.win7-loader {
+  animation: dismiss-loader 400ms ease 3s forwards;
+}
+
+@keyframes dismiss-loader {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
