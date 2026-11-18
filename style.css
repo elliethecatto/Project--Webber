@@ -5,6 +5,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: url('assets/windows7_arrow.cur'), auto;
+}
+
+.default {
+    cursor: url('assets/windows7_arrow.cur'), auto;
+}
+
+.pointer {
+    cursor: url('assets/windows7_link.cur'), auto;
 }
 
 .flex-container {
