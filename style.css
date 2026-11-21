@@ -23,7 +23,11 @@ body {
 }
 
 .mwWindow {
-    max-width: 1000px;
+    width: min(700px, 90vw);
+}
+
+.mwWindow [role="tabpanel"] {
+    min-height: 350px;
 }
 
 .mwTabs {
