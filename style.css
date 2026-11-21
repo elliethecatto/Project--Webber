@@ -18,8 +18,14 @@ body {
 
 .flex-container {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
     gap: 5px;
+}
+
+.flex-container img {
+    max-width: 100;
+    height: auto;
 }
 
 .mwWindow {
@@ -27,7 +33,9 @@ body {
 }
 
 .mwWindow [role="tabpanel"] {
-    min-height: 350px;
+    box-sizing: border-box;
+    max-height: 100%;
+    overflow-x: auto;
 }
 
 .mwTabs {
@@ -45,6 +53,12 @@ body {
 }
 
 /*this part is ai-assisted by Claude Sonnet 5.5 High*/
+
+.flex-container > div {
+  flex: 1 1 200px;        /* text takes the leftover space, wraps under the photo if under ~200px */
+  min-width: 0;           /* lets long text shrink instead of overflowing */
+  overflow-wrap: anywhere;
+}
 
 ul.tree-view summary,
 ul.tree-view a {
