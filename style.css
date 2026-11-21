@@ -108,3 +108,32 @@ ul.tree-view a:focus-visible {
   .tabs:has(#tab-socials:target) [aria-controls="tab-socials"],
   .tabs:has(#tab-skills:target) [aria-controls="tab-skills"]
 )::before { content: none; }
+
+@media (max-width: 600px) {
+  .mwWindow { width: 92vw !important; }
+
+  .mwWindow [role="tabpanel"] {
+    min-height: 0 !important;
+    overflow-x: hidden;
+  }
+
+  .mwWindow .flex-container {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .mwWindow .flex-container * {
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .mwWindow .flex-container img {
+    width: 160px !important;
+    height: auto !important;
+  }
+
+  .mwWindow .flex-container > div { width: 100% !important; }
+
+  .mwWindow h1,
+  .mwWindow h2 { font-size: 1.3rem !important; }
+}
