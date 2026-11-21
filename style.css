@@ -40,6 +40,8 @@ body {
     align-items: center;
 }
 
+/*this part is ai-assisted by Claude Sonnet 5.5 High*/
+
 ul.tree-view summary,
 ul.tree-view a {
     display: inline-block;
@@ -62,16 +64,15 @@ ul.tree-view a:focus-visible {
     border-color: #7da2ce;
 }
 
-/*this part is ai-assisted by Claude Sonnet 5.5 High*/
-
 /* panels: Home by default, Socials when targeted */
 .tabs [role="tabpanel"] { display: none; }
 .tabs [role="tabpanel"]:target,
-.tabs:not(:has(#tab-socials:target)) #tab-home { display: block; }
+.tabs:not(:has(#tab-socials:target, #tab-skills:target)) #tab-home { display: block; }
 
 :is(
-  .tabs:not(:has(#tab-socials:target)) [aria-controls="tab-home"],
-  .tabs:has(#tab-socials:target) [aria-controls="tab-socials"]
+  .tabs:not(:has(#tab-socials:target, #tab-skills:target)) [aria-controls="tab-home"],
+  .tabs:has(#tab-socials:target) [aria-controls="tab-socials"],
+  .tabs:has(#tab-skills:target) [aria-controls="tab-skills"]
 ) {
   background: var(--w7-tab-bg);
   border-color: var(--w7-el-bd);
@@ -85,6 +86,7 @@ ul.tree-view a:focus-visible {
 }
 
 :is(
-  .tabs:not(:has(#tab-socials:target)) [aria-controls="tab-home"],
-  .tabs:has(#tab-socials:target) [aria-controls="tab-socials"]
+  .tabs:not(:has(#tab-socials:target, #tab-skills:target)) [aria-controls="tab-home"],
+  .tabs:has(#tab-socials:target) [aria-controls="tab-socials"],
+  .tabs:has(#tab-skills:target) [aria-controls="tab-skills"]
 )::before { content: none; }
