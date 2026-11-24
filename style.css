@@ -89,10 +89,11 @@ ul.tree-view a:focus-visible {
 .tabs:not(:has(#tab-socials:target, #tab-skills:target, #tab-certification:target)) #tab-home { display: block; }
 
 :is(
-  .tabs:not(:has(#tab-socials:target, #tab-skills:target, #tab-certification:target)) [aria-controls="tab-home"],
+  .tabs:not(:has(#tab-socials:target, #tab-skills:target, #tab-certification:target, #tab-personalworks:target)) [aria-controls="tab-home"],
   .tabs:has(#tab-socials:target) [aria-controls="tab-socials"],
   .tabs:has(#tab-skills:target) [aria-controls="tab-skills"],
-  .tabs:has(#tab-skills:target) [aria-controls="tab-certification"]
+  .tabs:has(#tab-certification:target) [aria-controls="tab-certification"],
+  .tabs:has(#tab-personalworks:target) [aria-controls="tab-personalworks"]
 ) {
   background: var(--w7-tab-bg);
   border-color: var(--w7-el-bd);
@@ -109,5 +110,6 @@ ul.tree-view a:focus-visible {
   .tabs:not(:has(#tab-socials:target, #tab-skills:target, #tab-certification:target)) [aria-controls="tab-home"],
   .tabs:has(#tab-socials:target) [aria-controls="tab-socials"],
   .tabs:has(#tab-skills:target) [aria-controls="tab-skills"],
-  .tabs:has(#tab-skills:target) [aria-controls="tab-certification"]
+  .tabs:has(#tab-certification:target) [aria-controls="tab-certification"],
+  .tabs:has(#tab-personalworks:target) [aria-controls="tab-personalworks"]
 )::before { content: none; }
