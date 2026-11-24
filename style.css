@@ -86,7 +86,7 @@ ul.tree-view a:focus-visible {
 /* panels: Home by default, Socials when targeted */
 .tabs [role="tabpanel"] { display: none; }
 .tabs [role="tabpanel"]:target,
-.tabs:not(:has(#tab-socials:target, #tab-skills:target, #tab-certification:target)) #tab-home { display: block; }
+.tabs:not(:has(#tab-socials:target, #tab-skills:target, #tab-certification:target, #tab-personalworks:target)) #tab-home { display: block; }
 
 :is(
   .tabs:not(:has(#tab-socials:target, #tab-skills:target, #tab-certification:target, #tab-personalworks:target)) [aria-controls="tab-home"],
